@@ -61,7 +61,7 @@ parts_translation = {'$':'dollar sign',
 # print pos[:]
 
 def sentenceToAbbreviated(sentence):
-	tokens = nltk.word_tokenize(test_string)
+	tokens = nltk.word_tokenize(sentence)
 	tagged = nltk.pos_tag(tokens)
 	abbreviations = []
 	for a in range(len(tagged)):
