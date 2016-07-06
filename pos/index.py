@@ -18,10 +18,11 @@ while progress <= file_len("corpus.txt"): #finding line count takes a long time 
 	progress += 1
 	progress_file = open("progress.txt", "w")
 	progress_file.write(str(progress))
+	struct = ' '.join(assignment.sentenceToAbbreviated(sentence))
 	#print assignment.sentenceToAbbreviated(sentence)
 	with open("library.csv", "a") as fp:
 	    wr = csv.writer(fp, lineterminator = '\n', dialect='excel')
-	    wr.writerow(assignment.sentenceToAbbreviated(sentence))
+	    wr.writerow([struct])
 	# with open("library.txt", "a") as fp:
 	# 	fp.write(str(assignment.sentenceToAbbreviated(sentence)))
 	# 	fp.write(str("\n"))

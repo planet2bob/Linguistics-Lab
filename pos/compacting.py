@@ -4,7 +4,7 @@ import csv, sys
 
 patterns = {}
 
-with open("testing.csv", 'rb') as vb:
+with open("library.csv", 'rb') as vb:
     rows = list(csv.reader(vb, lineterminator = '\n', dialect='excel'))
     #print rows[row_number][column_number]
     for i in range(len(rows)):
@@ -13,4 +13,6 @@ with open("testing.csv", 'rb') as vb:
     	except:
     		patterns[rows[i][0]] = 1
 
-print patterns
+writer = csv.writer(open('dict.csv', 'wb'))
+for key, value in patterns.items():
+   writer.writerow([key, value])
