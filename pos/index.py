@@ -22,3 +22,6 @@ while progress <= file_len("corpus.txt"): #finding line count takes a long time 
 	with open("library.csv", "a") as fp:
 	    wr = csv.writer(fp, lineterminator = '\n', dialect='excel')
 	    wr.writerow(assignment.sentenceToAbbreviated(sentence))
+	# with open("library.txt", "a") as fp:
+	# 	fp.write(str(assignment.sentenceToAbbreviated(sentence)))
+	# 	fp.write(str("\n"))
